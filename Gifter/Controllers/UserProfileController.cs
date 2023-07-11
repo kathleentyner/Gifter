@@ -10,7 +10,7 @@ namespace Gifter.Controllers
     public class UserProfileController : ControllerBase
     {
         private readonly IUserProfileRepository _userProfileRepository;
-        public UserProfileController(IUserProfileRepository userProfileRepository)
+        public UserProfileController( IUserProfileRepository userProfileRepository)
         {
             _userProfileRepository = userProfileRepository;
         }
@@ -32,9 +32,20 @@ namespace Gifter.Controllers
             return Ok(post);
         }
 
+        [HttpGet("GetByIdWithPosts(int id);\r\n/{id}")]
+        public IActionResult GetByIdWithPosts(int id)
+        {
+        
+            var profile = _userProfileRepository.GetByIdWithPosts(id);
+            if (profile == null)
+            {
+                return NotFound();
+            }
+            return Ok(profile);
+        }
+    
 
-
-        [HttpPut("{id}")]
+[HttpPut("{id}")]
         public IActionResult Put(int id, UserProfile userProfile)
         {
             if (id != userProfile.Id)
