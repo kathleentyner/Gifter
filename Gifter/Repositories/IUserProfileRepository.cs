@@ -2,10 +2,12 @@
 
 namespace Gifter.Repositories
 {
-    internal interface IUserProfileRepository
+    public interface IUserProfileRepository
     {
         List<UserProfile> GetAll();
         UserProfile GetById(int id);
+        UserProfile GetByIdWithPosts(int id);
+
         void Add(UserProfile userProfile);
         void Update(UserProfile userProfile);
         void Delete(int id);
