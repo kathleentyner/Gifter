@@ -14,6 +14,9 @@ namespace Gifter
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddTransient<IPostRepository, PostRepository>();
+
+            builder.Services.AddTransient<IUserProfileRepository, UserProfileRepository>();
+
             builder.Services.AddSwaggerGen();
             var app = builder.Build();
 
