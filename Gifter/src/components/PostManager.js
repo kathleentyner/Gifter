@@ -26,3 +26,13 @@ export const getAllPostsWithComments = () => {
   return fetch(`${baseUrl}/GetWithComments`) 
     .then((res) => res.json())
 };
+//get post by id
+export const getPost = (id) => {
+  return fetch(`/api/post/${id}`).then((res) => res.json());
+};
+
+
+export const GetUserWithPosts = (id) => {
+    return fetch(`${baseUrl}/GetUserWithPosts/${id}/posts`)
+        .then((res) => res.json())
+}

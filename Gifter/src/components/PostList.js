@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { getAllPosts, getAllPostsWithComments } from "./PostManager";
 import { Post } from "./Post";
 
-const PostList = () => {
+export const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   const getPosts = () => {
