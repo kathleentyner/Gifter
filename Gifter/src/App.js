@@ -1,20 +1,18 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
-import PostList from "./components/PostList";
-import { PostSearch } from "./components/PostSearch";
-import { PostForm } from "./components/PostForm";
-import { BrowserRouter } from 'react-router-dom'
-import { render } from "react-dom";
+import ApplicationViews from "./components/ApplicationViews";
+import Header from "./components/Header";
 
 function App() {
- render(
-  <BrowserRouter>
-    <PostSearch/>
-    <PostForm/>
-    <PostList />
-  </BrowserRouter>,
-  document.getElementById('root')
-)
+  return (
+    <div className="App">
+      <Router>
+          <Header />
+          <ApplicationViews />
+      </Router>
+    </div>
+  );
 }
 
 export default App;
